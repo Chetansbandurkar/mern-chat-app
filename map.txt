@@ -1,0 +1,17 @@
+npm init -y 
+in root folder do it easy for the deployment 
+2. dot env can be use only when the ->
+      { const dotenv=require("dotenv");
+        dotenv.config();    }
+
+
+import cookie parse from the cookie parse to get the req.coookies.jwt(jwt wast the saved name ogf cookie)
+Token Structure: A JWT consists of three parts: Header, Payload, and Signature. 
+
+Valid Token: If the token is valid and the signature
+ matches, the jwt.verify function returns the decoded Payload of the JWT. This payload contains the claims and any other data that was encoded in the token.
+
+  MESSAGE CONTROLLWER ->>
+  ->> in messa ge controller we are first creatbing a conversation then we are adding 
+  the new conversation to the to the messages array of conversation messages
+  as per the model is created in conversation and the message model 
