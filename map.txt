@@ -15,3 +15,10 @@ Valid Token: If the token is valid and the signature
   ->> in messa ge controller we are first creatbing a conversation then we are adding 
   the new conversation to the to the messages array of conversation messages
   as per the model is created in conversation and the message model 
+
+Tailwind Glass Morphism for Designed CSS
+
+socker serve on top of express server and web browser
+
+
+// added start and build at the time of deplopment

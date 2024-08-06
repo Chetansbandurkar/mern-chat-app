@@ -1,5 +1,6 @@
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
+import { getReceiverSocketId, io } from "../socket/socket.js";
 
 
 export const sendMessage = async (req, res) => {
@@ -38,7 +39,13 @@ export const sendMessage = async (req, res) => {
     await Promise.all([conversation.save(), newMessage.save()]);
     // above is bettr the first it will work simultaniously take less time do paralle execution
 
-    res.status(201).json({newMessage} );
+
+    const receiverSocketId=getReceiverSocketId(receiverId);
+    if(receiverSocketId){
+      // i only want to send to the specified receiver
+      io.to(receiverSocketId).emit("newMessage",newMessage);
+    }
+   res.status(201).json({newMessage} );
 
   } catch (error) {
     console.log("Error in send Message Controller", error.message);
